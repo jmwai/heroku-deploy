@@ -26,7 +26,7 @@ SECRET_KEY = 'x*za6xf&_80ofdpae!yzq61g9ffikkx9$*iygbl$j7rr4wlf8t'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['test-deploy-akx.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['test-deploy-akx-53ecafc38275.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 
