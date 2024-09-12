@@ -26,6 +26,8 @@ SECRET_KEY = 'x*za6xf&_80ofdpae!yzq61g9ffikkx9$*iygbl$j7rr4wlf8t'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['test-deploy-akx.herokuapp.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -50,6 +52,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -117,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Dhaka'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -133,6 +136,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY =  'your-client-id'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET ='your-client-secret'
