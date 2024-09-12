@@ -27,9 +27,16 @@ jobs:
       #   run: |
       #     python manage.py test
 
+      # - name: Deploy to Heroku
+        # env:
+        #   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        # run: |
+        #   heroku git:remote -a test-deploy-akx
+        #   git push heroku main
       - name: Deploy to Heroku
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: |
-          heroku git:remote -a test-deploy-akx
-          git push heroku main
+        uses: akhileshns/heroku-deploy@v3.13.15
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "test-deploy-akx" 
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+     
